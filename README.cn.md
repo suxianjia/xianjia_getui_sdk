@@ -92,7 +92,7 @@ git@github.com:suxianjia/xianjia_getui_sdk.git
 
 https://packagist.org/packages/submit
 
-
+composer require suxianjia/xianjia_getui_sdk
 
 suxianjia/xianjia_getui_sdk
 
