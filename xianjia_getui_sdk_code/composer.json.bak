@@ -1,0 +1,17 @@
+{
+    "name": "root/xianjiasitemap",
+    "description": "由于许多同学对站点地图的事似懂非懂，本项目就把这一篮子的事，都给出解决方案",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Root\\Xianjiasitemap\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dev",
+            "email": "605011288@qq.com"
+        }
+    ],
+    "require": {}
+}
