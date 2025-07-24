@@ -150,6 +150,8 @@ tests/: 测试文件目录。
 vendor/: 第三方依赖库。
  
 
+git filter-repo --path-glob '*.so' --invert-paths --force
+git push origin --force --all
 
 
 ## License
