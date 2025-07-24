@@ -153,6 +153,13 @@ vendor/: 第三方依赖库。
 git filter-repo --path-glob '*.so' --invert-paths --force
 git push origin --force --all
 
+rm composer.lock
+composer install --ignore-platform-reqs  # 临时忽略环境检查
+
+rm composer.lock
+php82 composer82.phar install  --ignore-platform-reqs 
+
+composer update --dry-run
 
 ## License
 

@@ -3,7 +3,7 @@
         'name' => 'suxianjia/xianjia_getui_sdk',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'fc8e13bc7d96aa8dd363fa45c3e04661d7338558',
+        'reference' => '1448b5a9f27bec2cdec545f206550911e10941ef',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'suxianjia/xianjia_getui_sdk' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'fc8e13bc7d96aa8dd363fa45c3e04661d7338558',
+            'reference' => '1448b5a9f27bec2cdec545f206550911e10941ef',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
