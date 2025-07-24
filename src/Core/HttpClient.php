@@ -100,7 +100,7 @@ public function post(string $uri, array $query = [], array $body = [], array $he
         if (!empty($query)) {
             $fullUri .= '?' . http_build_query($query);
         }
-// var_dump($fullUri);
+//  var_dump($fullUri);
 
         // 实现签名生成和请求发送
         curl_setopt_array($ch, [

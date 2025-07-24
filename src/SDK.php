@@ -162,7 +162,7 @@ public function getTimestamp(): string {
      $timestamp = round(microtime(true)*1000);
 
      if(  strlen($timestamp) != 13) {
-        throw new \InvalidArgumentException('Invalid auth parameters');
+        // throw new \InvalidArgumentException('Invalid auth parameters');
     }
 
     return $timestamp;
@@ -257,7 +257,7 @@ public function getAuth(): string {
         if(   $res['code'] == 0){
                 $token = $res['data']; 
         }else { 
-          throw new \InvalidArgumentException('Invalid auth parameters');
+        //   throw new \InvalidArgumentException('Invalid auth parameters');
         }
     }
     $this->token =   $token;
@@ -280,6 +280,31 @@ private function getBaseUrl(): string {
 private function getApiUrl(): string {
     return 'https://restapi.getui.com/v2/'.$this->getAppId().'/';
 }
+ /**
+ * -----------------------------------------------------------
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ *  01 鉴权API
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * https://docs.getui.com/getui/server/rest_v2/token/
+ * 
+ * -----------------------------------------------------------
+*/
+
+
+
+
 
 //-----------------------------------------------------------
 // 获取鉴权token 
@@ -324,7 +349,7 @@ public function auth_delete() {
  * 
  * 
  * 
- *  推送API
+ *  02 推送API
  * 
  * 
  * 
@@ -332,7 +357,7 @@ public function auth_delete() {
  * 
  * 
  * 
- * 
+ * https://docs.getui.com/getui/server/rest_v2/push/
  * 
  * -----------------------------------------------------------
 */
@@ -494,7 +519,7 @@ public function push_single_batch_alias(array $inputData = []): array|string {
 //                          此接口用来创建消息体，并返回taskid，为批量推的前置步骤
 //                          注：此接口频次限制200万次/天，申请修改请点击右侧“技术咨询”了解详情。
 //                          接口地址: BaseUrl/push/list/message
-//                          请求方式: POST 
+// 请求方式: POST 
 //-----------------------------------------------------------
 public function create_task_push_list_message(array $inputData = []): array|string {  
  $query = [  ];  
@@ -538,7 +563,7 @@ public function create_task_push_list_message(array $inputData = []): array|stri
 // 【toList】执行cid批量推
 //                              对列表中所有cid进行消息推送。调用此接口前需调用创建消息接口设置消息内容。
 //                              接口地址: BaseUrl/push/list/cid
-//                              请求方式: POST
+// 请求方式: POST
 //-----------------------------------------------------------
 public function push_list_cid(array $inputData = []): array|string {  
  $query = [  ];  
@@ -566,7 +591,7 @@ public function push_list_cid(array $inputData = []): array|string {
 // 【toList】执行别名批量推
 //                          对列表中所有别名进行消息推送。调用此接口前需调用创建消息接口设置消息内容。
 //                          接口地址: BaseUrl/push/list/alias
-//                          请求方式: POST
+// 请求方式: POST
 //-----------------------------------------------------------
 public function push_list_alias(array $inputData = []): array|string {  
  $query = [  ];  
@@ -588,7 +613,7 @@ public function push_list_alias(array $inputData = []): array|string {
 //                      对指定应用的所有用户群发推送消息。支持定时、定速功能，查询任务推送情况请见接口查询定时任务。
 //                      注：此接口频次限制20次/天，每分钟不能超过5次(推送限制和接口根据条件筛选用户推送共享限制)
 //                      接口地址: BaseUrl/push/all
-//                      请求方式: POST
+// 请求方式: POST
 //-----------------------------------------------------------
 public function push_all(array $inputData = []): array|string {  
  $query = [  ];  
@@ -620,7 +645,7 @@ public function push_all(array $inputData = []): array|string {
 //                              注：此接口频次限制20次/天，每分钟不能超过5次(推送限制和接口执行群推共享限制)，定时推送功能需要申请开通才可以使用，申请修改请点击右侧“技术咨询”了解详情。
 //                              注：个推用户画像中的，单身、已婚、彩票类标签已经下架，请开发者及时关注和处理。
 //                              接口地址: BaseUrl/push/tag
-//                              请求方式: POST
+// 请求方式: POST
 //-----------------------------------------------------------
 public function push_tag(array $inputData = []): array|string {  
  $query = [  ];  
@@ -662,7 +687,7 @@ public function push_tag(array $inputData = []): array|string {
 //                          根据标签过滤用户并推送。支持定时、定速功能。
 //                          注：该功能需要申请相关套餐，请点击右侧“技术咨询”了解详情 。
 //                          接口地址: BaseUrl/push/fast_custom_tag
-//                          请求方式: POST
+// 请求方式: POST
 //-----------------------------------------------------------
 public function push_fast_custom_tag(array $inputData = []): array|string {  
  $query = [  ];  
@@ -697,7 +722,7 @@ public function push_fast_custom_tag(array $inputData = []): array|string {
 // 【任务】停止任务
 //                          对正处于推送状态，或者未接收的消息停止下发（只支持批量推和群推任务）
 //                          接口地址: BaseUrl/task/$taskid
-//                          请求方式: DELETE
+// 请求方式: DELETE
 //-----------------------------------------------------------
 public function delete_task(array $inputData = []): array|string {  
  $query = [  ];  
@@ -717,7 +742,7 @@ public function delete_task(array $inputData = []): array|string {
 //                          该接口支持在推送完定时任务之后，查看定时任务状态，定时任务是否发送成功。
 //                          创建定时任务请见接口执行群推
 //                          接口地址: BaseUrl/task/schedule/$taskid
-//                          请求方式: GET
+// 请求方式: GET
 //-----------------------------------------------------------
 public function find_schedule_task(array $inputData = []): array|string {  
  $query = [  ];  
@@ -733,7 +758,7 @@ public function find_schedule_task(array $inputData = []): array|string {
 // 【任务】删除定时任务
 //                      用来删除还未下发的任务，删除后定时任务不再触发(距离下发还有一分钟的任务，将无法删除，后续可以调用停止任务接口。)
 //                      接口地址: BaseUrl/task/schedule/$taskid
-//                      请求方式: DELETE
+// 请求方式: DELETE
 //-----------------------------------------------------------
 public function delete_schedule_task(array $inputData = []): array|string {  
  $query = [  ];  
@@ -753,7 +778,7 @@ public function delete_schedule_task(array $inputData = []): array|string {
 //                          调用此接口可以查询某任务下某cid的具体实时推送路径情况
 //                          使用该接口需要申请权限，若有需要，请点击右侧“技术咨询”了解详情
 //                          接口地址: BaseUrl/task/detail/${cid}/${taskid}
-//                          请求方式: GET
+// 请求方式: GET
 //-----------------------------------------------------------
 public function find_message_detail(array $inputData = []): array|string {  
  $query = [  ];  
@@ -776,7 +801,7 @@ public function find_message_detail(array $inputData = []): array|string {
  * 
  * 
  * 
- *  用户API
+ *  04 用户API
  * 
  * 
  * 
@@ -836,7 +861,7 @@ public function find_cid ( string $alias = ''): array|string {
 //       "alias": ""
 //     },
 //                  接口地址: BaseUrl/user/alias
-//                  请求方式: DELETE
+// 请求方式: DELETE
 //-----------------------------------------------------------
 public function delete_batch_alias ( array $data_list =  []) {    
     $body = [  
@@ -861,7 +886,7 @@ public function delete_batch_alias ( array $data_list =  []) {
 //-----------------------------------------------------------
 // 【别名】解绑所有别名    解绑所有与该别名绑定的cid  delete_all_alias   :批量解除别名与cid的关系
 //                      接口地址: BaseUrl/user/alias/$alias
-//                      请求方式: DELETE
+// 请求方式: DELETE
 //-----------------------------------------------------------
 public function delete_all_alias (  string $alias = ''): array|string {    
     $body = [   ];
@@ -871,7 +896,7 @@ public function delete_all_alias (  string $alias = ''): array|string {
 
 //-----------------------------------------------------------
 // 【标签】一个用户绑定一批标签 
-//                 请求方式: POST      /user/custom_tag/cid/$cid $custom_tag
+// 请求方式: POST      /user/custom_tag/cid/$cid $custom_tag
 //-----------------------------------------------------------
 public function bind_custom_tag(string  $cid, array $custom_tag = []): array|string {   
 // 构建请求数据 	Json Array
@@ -885,7 +910,7 @@ public function bind_custom_tag(string  $cid, array $custom_tag = []): array|str
 //-----------------------------------------------------------
 // 【标签】一批用户绑定一个标签  
 //                      接口地址: BaseUrl/user/custom_tag/batch/$custom_tag
-//                      请求方式: PUT 
+// 请求方式: PUT 
 //-----------------------------------------------------------
 public function bind_custom_tag_batch(array  $cid_list, string $custom_tag =  ''): array|string {   
 // 构建请求数据 	Json Array
@@ -933,7 +958,7 @@ public function find_custom_tag( string $cid =  ''): array|string {
 // 【用户】添加黑名单用户 add_blacklist
 //                          将单个或多个用户加入黑名单，对于黑名单用户在推送过程中会被过滤掉。 
 //                          接口地址: BaseUrl/user/black/cid/$cid,$cid.  用户标识，多个以英文逗号隔开，一次最多传200个
-//                          请求方式: POST
+// 请求方式: POST
 //-----------------------------------------------------------
     public function add_blacklist(array $cid_list = []): array|string
     {
@@ -951,7 +976,7 @@ public function find_custom_tag( string $cid =  ''): array|string {
 // 【用户】移除黑名单用户
 //                  将单个cid或多个cid用户移出黑名单，对于黑名单用户在推送过程中会被过滤掉的，不会给黑名单用户推送消息 
 //                  接口地址: BaseUrl/user/black/cid/$cid,$cid
-//                  请求方式: DELETE
+// 请求方式: DELETE
 //-----------------------------------------------------------
 public function delete_blacklist(array $cid_list = []): array|string
     {
@@ -967,7 +992,7 @@ public function delete_blacklist(array $cid_list = []): array|string
 // 【用户】查询用户状态
 //              查询用户的状态 
 //              接口地址: BaseUrl/user/status/$cid,$cid
-//              请求方式: GET 
+// 请求方式: GET 
 //-----------------------------------------------------------
 public function find_user_status(array $cid_list = []): array|string
     {
@@ -982,7 +1007,7 @@ public function find_user_status(array $cid_list = []): array|string
 //-----------------------------------------------------------
 // 【用户】查询设备状态 find_device_status
 //                  接口地址: BaseUrl/user/deviceStatus/$cid,$cid  用户标识，多个以英文逗号隔开，一次最多传100个
-//                  请求方式: GET
+// 请求方式: GET
 // 注意：
 // 1.该接口返回设备在线时，仅表示存在集成了个推SDK的应用在线
 // 2.该接口返回设备不在线时，仅表示不存在集成了个推SDK的应用在线
@@ -1005,7 +1030,7 @@ public function find_device_status(array $cid_list = []): array|string
 //-----------------------------------------------------------
 // 【用户】查询用户信息 find_user_detail
 //                              查询用户的信息  接口地址: BaseUrl/user/detail/$cid,$cid 	用户标识，多个以英文逗号隔开，一次最多传1000个
-//                              请求方式: GET
+// 请求方式: GET
 //-----------------------------------------------------------
 public function find_user_detail(array $cid_list = []): array|string
     {
@@ -1023,7 +1048,7 @@ public function find_user_detail(array $cid_list = []): array|string
 // 【用户】设置角标(仅支持IOS) badge
 //                          通过cid通知个推服务器当前iOS设备的角标情况。 
 //                          接口地址: BaseUrl/user/badge/cid/$cid,$cid
-//                          请求方式: POST
+// 请求方式: POST
 // set_badge
 // badge	String	是	无	用户应用icon上显示的数字
 // +N: 在原有badge上+N
@@ -1046,7 +1071,7 @@ public function set_badge(array $cid_list = [],int $badge =   0): array|string
 // 【用户】查询用户总量
 //                  通过指定查询条件来查询满足条件的用户数量
 //                  接口地址: BaseUrl/user/count
-//                  请求方式: POST
+// 请求方式: POST
 //-----------------------------------------------------------
 public function find_user_count(array $key_value = []): array|string
     {
@@ -1068,7 +1093,7 @@ public function find_user_count(array $key_value = []): array|string
 //-----------------------------------------------------------
 // 【用户】批量绑定或解绑cid和deviceToken
 //              接口地址: BaseUrl/user/bind_dt/$type
-//              请求方式: POST
+// 请求方式: POST
 //-----------------------------------------------------------
 public function bind_dt(array $dt_list = [],string $type ='' ): array|string
     {
@@ -1109,8 +1134,8 @@ public function create_smart_crowd(string $name,array $tasks, array $brand_list,
 'brand_list' => $brand_list ?? [], //     String Array    是    无    覆盖的设备品牌列表，hw表示华为；xm表示小米；op表示OPPO,vv表示VIVO,mz表示魅族,other表示其他品牌	String Array	是	无	覆盖的设备机型列表，hw表示华为；xm表示小米；op表示OPPO,vv表示VIVO,mz表示魅族,other表示其他机型
 'package_num' => $package_num ?? 1000, //	Number	是	无	每组人群量级上限，范围为1000~5000000
 'active_range' => $active_range ?? 1, //	Number	否	无	近 ${active_range} 天活跃/非活跃用户，范围为1~90
-'active_type' => $active_type ?? 1, //    Number    否    无    1表示活跃用户；-1表示非活跃用户	Number	否	无	1表示活跃用户；-1表示非活跃用户
-'is_overlap' => $is_overlap ?? true, //    Boolean    否    false    是否允许各种人群重合：true表示允许；false表示不允许	Boolean	否	false	是否允许各种人群重合：true表示允许；false表示不允许
+'active_type' => $active_type ?? 1, //    Number    否    无    1表示活跃用户；-1表示非活跃户	Number	否	无	1表示活跃用户；-1表示非活跃用户
+'is_overlap' => $is_overlap ?? true, //    Boolean    否    false    是否允许各种人群重合：true用表示允许；false表示不允许	Boolean	否	false	是否允许各种人群重合：true表示允许；false表示不允许
         ]; 
   
         $query = []; 
@@ -1125,7 +1150,7 @@ public function create_smart_crowd(string $name,array $tasks, array $brand_list,
 //                  查询文案圈人任务列表
 //                  说明：文案圈人模型为 SVIP 功能，需升级服务后方可使用。若须申请修改请点击右侧“技术咨询”了解详情。 
 //                  接口地址: BaseUrl/user/smart_crowd/task/list
-//                  请求方式: POST
+// 请求方式: POST
 //-----------------------------------------------------------
 public function smart_crowd_task_list( array $sub_task_ids = []): array|string
     {  
@@ -1145,7 +1170,7 @@ public function smart_crowd_task_list( array $sub_task_ids = []): array|string
 //                  查询文案圈人模型列表
 //                  说明：文案圈人模型为 SVIP 功能，需升级服务后方可使用。若须申请修改请点击右侧“技术咨询”了解详情。 
 //                  接口地址: BaseUrl/user/smart_crowd/model/list
-//                  请求方式: POST 
+// 请求方式: POST 
 //-----------------------------------------------------------
 public function smart_crowd_model_list( string $name =  '' , int $status = 0): array|string
     {  
@@ -1156,6 +1181,181 @@ public function smart_crowd_model_list( string $name =  '' , int $status = 0): a
         $query = []; 
         return  $this->output( 'post','user/smart_crowd/model/list' , $query,   $body ); 
     }
+
+
+
+
+/**
+ * -----------------------------------------------------------
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ *  03 统计API
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ *  https://docs.getui.com/getui/server/rest_v2/report/
+ * -----------------------------------------------------------
+*/
+
+
+//-----------------------------------------------------------
+// 【推送】获取推送结果（不含自定义事件）
+//                                  查询推送数据，可查询近 90 天内的数据。返回结果包括：可下发数、下发数，接收数、展示数、点击数等结果。支持单个taskId查询和多个taskId查询。
+//                                  此接口调用，仅可以查询toList或toApp的推送结果数据；不能查询toSingle的推送结果数据。
+//                                  接口地址: BaseUrl/report/push/task/$taskid,$taskid
+// 请求方式: GET
+//-----------------------------------------------------------
+public function find_report_push_task( array $taskid_list =   []  ): array|string
+    {  
+        $body = [  ]; 
+        $query = []; 
+        return  $this->output( 'get','report/push/task/'.  implode(',', $taskid_list) , $query,   $body ); 
+    }
+
+
+//-----------------------------------------------------------
+// 【推送】获取推送结果（含自定义事件）
+//                                  查询推送数据，可查询近 90 天内的数据。返回结果包括：可下发数、下发数，接收数、展示数、点击数等结果。支持单个taskId查询和多个taskId查询。
+//                                  此接口调用，仅可以查询toList或toApp的推送结果数据；不能查询toSingle的推送结果数据。
+//                                  接口地址: BaseUrl/report/push/task/$taskid,$taskid?actionIdList=$actionId,$actionId,$actionId
+// 请求方式: GET
+//-----------------------------------------------------------
+public function find_report_push_custom_task( array $taskid_list =   [] ,array $actionId_list =   []  ): array|string
+    {  
+        $body = [  ]; 
+        $query = []; 
+        return  $this->output( 'get','report/push/task/'.  implode(',', $taskid_list) .'?actionIdList='.  implode(',', $actionId_list) , $query,   $body ); 
+    }
+
+
+
+//-----------------------------------------------------------
+// 【推送】任务组名查报表
+//                              根据任务组名查询推送结果，可查询近 70 天内的数据。返回结果包括：消息可下发数、下发数，接收数、展示数、点击数。
+//                              接口地址: BaseUrl/report/push/task_group/$group_name
+// 请求方式: GET
+//-----------------------------------------------------------
+public function find_report_push_task_group( array $data =   []    ): array|string
+    {  
+        $body = [    ]; 
+        $query = [
+            'needGetuiByBrand' => $data ['needGetuiByBrand'] ?? false, //	Boolean	否	False	是否需要个推品牌报表
+            'startDate'     => $data ['startDate'] ?? '', //	String	否	请求接口当天前移70天日期	查询报表开始日期,格式: yyyy-MM-dd
+            'endDate'=> $data ['endDate'] ?? '', //	String	否	请求接口当天日期	查询报表结束日期,格式: yyyy-MM-dd
+        ]; 
+        $group_name = $data ['group_name'] ?? '';
+        return  $this->output( 'get','report/push/task_group/'.  $group_name  , $query,   $body ); 
+    }
+
+
+
+
+
+//-----------------------------------------------------------
+// 【推送】获取推送实时结果
+//                          获取推送实时结果，可查询消息下发数，接收数、展示数、点击数和消息折损详情等结果。支持单个taskId查询和多个taskId查询。
+//                          注意：该接口需要开通权限，如需开通，请联系对应的商务同学开通
+//                          接口地址: BaseUrl/report/push/task/${taskid}/detail
+// 请求方式: GET
+//-----------------------------------------------------------
+public function find_report_push_task_task_detail( array $data =   []    ): array|string
+    {  
+        $body = [    ]; 
+        $query = [   ]; 
+        $taskid = $data ['taskid'] ?? '';
+        return  $this->output( 'get','report/push/task/'. $taskid .'/detail'  , $query,   $body ); 
+    }
+
+
+
+
+//-----------------------------------------------------------
+// 【推送】获取单日推送数据
+//                      调用此接口可以获取某个应用单日的推送数据(推送数据包括：下发数，接收数、展示数、点击数)(目前只支持查询非当天的数据)
+//                      接口地址: BaseUrl/report/push/date/$date
+// 请求方式: GET
+//-----------------------------------------------------------
+public function find_report_push_date( array $data =   []    ): array|string
+    {  
+        $body = [    ]; 
+        $query = [   ]; 
+        $date = $data ['date'] ?? date('yyyy-MM-dd' ,time() )  ; //日期，格式: yyyy-MM-dd
+        return  $this->output( 'get','report/push/date/'. $date , $query,   $body ); 
+    }
+
+
+
+//-----------------------------------------------------------
+// 【推送】查询推送量
+//                          查询应用当日可推送量和推送余量
+//                          注意：
+//                                  1. 部分厂商消息不限制推送量，所以此接口不做返回，例如 hw厂商，op的私信消息，xm的重要级别消息等等
+//                                  2.vv返回的是请求量push_num，总限额total_num返回的总的到达量，所以会有请求量push_num超过总限额total_num的情况
+//                                  3.该接口做了频控限制，请不要频繁调用
+//                          接口地址: BaseUrl/report/push/count
+// 请求方式: GET
+//-----------------------------------------------------------
+public function find_report_push_count( array $data =   []    ): array|string
+    {  
+        $body = [    ]; 
+        $query = [   ];  
+        return  $this->output( 'get','report/push/count' , $query,   $body ); 
+    }
+
+
+
+//-----------------------------------------------------------
+// 【用户】获取单日用户数据接口
+//                          调用此接口可以获取某个应用单日的用户数据(用户数据包括：新增用户数，累计注册用户总数，在线峰值，日联网用户数)(目前只支持查询非当天的数据)
+//                          接口地址: BaseUrl/report/user/date/$date
+// 请求方式: GET
+//-----------------------------------------------------------
+public function find_report_user_date( array $data =   []    ): array|string
+    {  
+        $body = [    ]; 
+        $query = [   ];  
+        $date = $data ['date'] ??  date('yyyy-MM-dd' ,time() )  ; //日期，格式: yyyy-MM-dd
+        return  $this->output( 'get','report/user/date/'. $date , $query,   $body ); 
+    }
+
+
+
+//-----------------------------------------------------------
+// 【用户】获取24个小时在线用户数
+//                              查询当前时间一天内的在线用户数(10分钟一个点，1个小时六个点)
+//                              接口地址: BaseUrl/report/online_user
+// 请求方式: GET
+//-----------------------------------------------------------
+
+public function find_report_online_user( array $data =   []    ): array|string
+    {  
+        $body = [    ]; 
+        $query = [   ];   
+        return  $this->output( 'get','report/online_user' , $query,   $body ); 
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //-------------------end 
 }

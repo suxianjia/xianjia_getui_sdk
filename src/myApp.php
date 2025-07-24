@@ -331,6 +331,76 @@ public function add_blacklist(array $cid_list =  [] ): array|string
         $SDK = SDK::getInstance(  self::getAllConfig( ));     
         return  $SDK->find_message_detail (  $data);
     }
+//-----------------------------------------------------------
+// find_report_push_task
+//-----------------------------------------------------------
+
+  public function find_report_push_task( array  $data =  []  ): array|string
+    { 
+        $SDK = SDK::getInstance(  self::getAllConfig( ));     
+        return  $SDK->find_report_push_task (  $data);
+    }
+//-----------------------------------------------------------
+//find_report_push_custom_task
+//-----------------------------------------------------------
+  public function find_report_push_custom_task( array  $data =  [] ,array $actionId_list =   [] ): array|string
+    { 
+        $SDK = SDK::getInstance(  self::getAllConfig( ));     
+        return  $SDK->find_report_push_custom_task (  $data,  $actionId_list  );
+    }
+//-----------------------------------------------------------
+//find_report_push_task_group
+//-----------------------------------------------------------
+
+  public function find_report_push_task_group( array  $data =  [] ): array|string
+    { 
+        $SDK = SDK::getInstance(  self::getAllConfig( ));     
+        return  $SDK->find_report_push_task_group (  $data  );
+    }
+//-----------------------------------------------------------
+//find_report_push_task_task_detail
+//-----------------------------------------------------------
+  public function find_report_push_task_task_detail( array  $data =  [] ): array|string
+    { 
+        $SDK = SDK::getInstance(  self::getAllConfig( ));     
+        return  $SDK->find_report_push_task_task_detail (  $data  );
+    }
+//-----------------------------------------------------------
+//find_report_push_date
+//-----------------------------------------------------------
+  public function find_report_push_date( array  $data =  [] ): array|string
+    { 
+        $SDK = SDK::getInstance(  self::getAllConfig( ));     
+        return  $SDK->find_report_push_date (  $data  );
+    }
+
+//-----------------------------------------------------------
+// find_report_push_count
+//-----------------------------------------------------------
+  public function find_report_push_count( array  $data =  [] ): array|string
+    { 
+        $SDK = SDK::getInstance(  self::getAllConfig( ));     
+        return  $SDK->find_report_push_count (  $data  );
+    }
+
+//-----------------------------------------------------------
+//find_report_user_date
+//-----------------------------------------------------------
+  public function find_report_user_date( array  $data =  [] ): array|string
+    { 
+        $SDK = SDK::getInstance(  self::getAllConfig( ));     
+        return  $SDK->find_report_user_date (  $data  );
+    }
+//-----------------------------------------------------------
+//find_report_online_user
+//-----------------------------------------------------------
+
+
+  public function find_report_online_user( array  $data =  [] ): array|string
+    { 
+        $SDK = SDK::getInstance(  self::getAllConfig( ));     
+        return  $SDK->find_report_online_user (  $data  );
+    }
 
 
 
