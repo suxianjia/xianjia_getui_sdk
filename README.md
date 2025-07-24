@@ -149,3 +149,9 @@ examples/: 可能包含更多的示例代码。
 tests/: 测试文件目录。
 vendor/: 第三方依赖库。
  
+
+
+
+## License
+
+This package is open-sourced software licensed under the [MIT license](LICENSE).
