@@ -19,7 +19,7 @@
     "require": {
         "php": "^8.0|>=8.3.3",
       "ext-pdo": "*",
-      "ext-xmlwriter": "*",
-      "predis/predis": "^3.1"
+      "ext-xmlwriter": "*", 
+              "predis/predis": "^2.2"
     }
 }
