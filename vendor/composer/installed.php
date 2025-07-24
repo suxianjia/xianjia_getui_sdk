@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'suxianjia/xianjia_getui_sdk',
-        'pretty_version' => '1.0.0',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'fc8e13bc7d96aa8dd363fa45c3e04661d7338558',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'predis/predis' => array(
-            'pretty_version' => 'v3.0.1',
-            'version' => '3.0.1.0',
-            'reference' => '34fb0a7da0330df1bab4280fcac4afdeeccc3edf',
+            'pretty_version' => 'v3.1.0',
+            'version' => '3.1.0.0',
+            'reference' => '202e0c5322b906ec4c761c0cefebad6d0959a699',
             'type' => 'library',
             'install_path' => __DIR__ . '/../predis/predis',
             'aliases' => array(),
@@ -29,9 +29,9 @@
             'dev_requirement' => false,
         ),
         'suxianjia/xianjia_getui_sdk' => array(
-            'pretty_version' => '1.0.0',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'fc8e13bc7d96aa8dd363fa45c3e04661d7338558',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

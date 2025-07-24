@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6e49c4d7c287359fadb7f11030cc249",
+    "content-hash": "1da6cd70c546fc18e519a27a0d82c315",
     "packages": [
         {
             "name": "predis/predis",
-            "version": "v3.0.1",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/predis/predis.git",
-                "reference": "34fb0a7da0330df1bab4280fcac4afdeeccc3edf"
+                "reference": "202e0c5322b906ec4c761c0cefebad6d0959a699"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/predis/predis/zipball/34fb0a7da0330df1bab4280fcac4afdeeccc3edf",
-                "reference": "34fb0a7da0330df1bab4280fcac4afdeeccc3edf",
+                "url": "https://api.github.com/repos/predis/predis/zipball/202e0c5322b906ec4c761c0cefebad6d0959a699",
+                "reference": "202e0c5322b906ec4c761c0cefebad6d0959a699",
                 "shasum": ""
             },
             "require": {
@@ -59,7 +59,7 @@
             ],
             "support": {
                 "issues": "https://github.com/predis/predis/issues",
-                "source": "https://github.com/predis/predis/tree/v3.0.1"
+                "source": "https://github.com/predis/predis/tree/v3.1.0"
             },
             "funding": [
                 {
@@ -67,7 +67,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-05-16T18:30:32+00:00"
+            "time": "2025-07-22T15:37:44+00:00"
         },
         {
             "name": "psr/http-message",
@@ -126,7 +126,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
@@ -134,6 +134,6 @@
         "ext-pdo": "*",
         "ext-xmlwriter": "*"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }

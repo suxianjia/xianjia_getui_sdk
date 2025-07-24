@@ -1,7 +1,6 @@
 {
     "name": "suxianjia/xianjia_getui_sdk",
     "description": "xianjia_getui_sdk_code 是一个为个推（Getui）推送服务封装的 PHP SDK 项目，目标是提供一套基于 REST API 的服务端推送功能，方便开发者集成个推的消息推送能力，如单播、批量推送、别名管理、标签绑定等功能。https://docs.getui.com/getui/server/rest_v2/service_sdk/  有 PHP 版本吗? 确认了，没有呢，那就自己写一个吧！",
- 
     "type": "library",
     "license": "MIT",
     "autoload": {
@@ -21,10 +20,6 @@
         "php": "^8.0|>=8.3.3",
       "ext-pdo": "*",
       "ext-xmlwriter": "*",
-
- 
-        "predis/predis": "^3.0"
-    
-
+      "predis/predis": "^3.0"
     }
 }
